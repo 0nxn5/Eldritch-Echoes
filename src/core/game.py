@@ -12,11 +12,16 @@ class Game:
         self.running = False
 
     def process_input(self) -> None:
-        """Handle user input.
-
-        This method will later capture keyboard or mouse events. For now it
-        simply acts as a placeholder so the game loop is easy to extend.
-        """
+        input_str = input("Enter command: ")
+        if input_str.lower() == "exit":
+            self.running = False
+            print("Exiting game...")
+        elif input_str.lower() == "help":
+            print("Available commands: exit, help")
+        elif input_str.lower() == "create character":
+            print("Character creation not implemented yet.")
+        else:
+            print(f"Unknown command: {input_str}. Type 'help' for available commands.")
 
     def update(self) -> None:
         """Update the game state."""
